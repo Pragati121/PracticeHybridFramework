@@ -12,12 +12,13 @@ public class StepDefinition1 extends BaseClass {
         setUpDriver();
         pageFactory.getHome().HomeUser();
         pageFactory.getComputer().ComputerUser();
-        close();
+       // close();
     }
-//    @When("Add Notebooks to cart")
-//    public void add_notebooks_to_cart() {
-//
-//    }
+    @When("Add Notebooks to cart")
+    public void add_notebooks_to_cart() {
+        pageFactory.getCheck().checkout();
+
+   }
 //    @When("Checkout and register")
 //    public void checkout_and_register() {
 //        throw new io.cucumber.java.PendingException();

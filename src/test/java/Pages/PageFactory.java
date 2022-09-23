@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 public class PageFactory {
     private HomePage Home;
     private ComputerPage Computer;
+    private CheckoutPage Check;
     WebDriver driver;
 
     public PageFactory(WebDriver driver) {
@@ -24,5 +25,13 @@ public class PageFactory {
             Computer=new ComputerPage(driver);
         }
         return Computer;
+    }
+
+    public CheckoutPage getCheck() {
+        if(Check==null)
+        {
+            Check=new CheckoutPage(driver);
+        }
+        return Check;
     }
 }

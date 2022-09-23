@@ -6,9 +6,19 @@ import org.openqa.selenium.WebDriver;
 public class CheckoutPage {
     WebDriver driver;
 
-    By Cart2             = By.xpath("//button[@id='add-to-cart-button-5']");
-    By Shoppingcart      =  By.xpath("//a[@class='ico-cart']");
-    By Checkbox          =  By.xpath("//input[contains(@name,'termsofservice')]");
-    By Checkout          = By.xpath("//button[@name='checkout']");
+    By Cart2             = By.xpath("(//button[@type='button'])[5]");
+    By Cart123           = By.xpath("");
+
+    public CheckoutPage(WebDriver driver)
+    {
+        this.driver=driver;
+    }
+    public void checkout(){
+        driver.findElement(Cart2).click();
+//        driver.findElement(Shoppingcart).click();
+//        driver.findElement(Checkbox).click();
+//        driver.findElement(Checkout).click();
+    }
+
 }
 
