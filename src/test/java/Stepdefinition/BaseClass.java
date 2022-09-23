@@ -8,19 +8,20 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public class BaseClass {
-   static WebDriver driver;
-  public static PageFactory pageFactory;
+    static WebDriver driver;
+    public static PageFactory pageFactory;
 
 
     public void setUpDriver() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.navigate().to("https://demo.nopcommerce.com/");
+        driver.navigate().to("https://www.saucedemo.com/");
         pageFactory = new PageFactory(driver);
     }
 
-   // public void close() {
-     //   driver.close();
+    public void close() {
+        driver.close();
     }
+}
 

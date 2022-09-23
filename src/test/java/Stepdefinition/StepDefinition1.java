@@ -11,20 +11,21 @@ public class StepDefinition1 extends BaseClass {
     public void user_is_on_home_page() throws IOException, InterruptedException {
         setUpDriver();
         pageFactory.getHome().HomeUser();
-        pageFactory.getComputer().ComputerUser();
-       // close();
     }
-    @When("Add Notebooks to cart")
-    public void add_notebooks_to_cart() {
-        pageFactory.getCheck().checkout();
 
-   }
-//    @When("Checkout and register")
-//    public void checkout_and_register() {
-//        throw new io.cucumber.java.PendingException();
-//    }
-//    @Then("Verify the product")
-//    public void verify_the_product() {
-//        throw new io.cucumber.java.PendingException();
-//    }
+    @When("Add Swagbag to cart and then checkout")
+    public void add_swagbag_to_cart_and_then_checkout() {
+     pageFactory.getCart().CartMethod();
+    }
+
+    @When("Enter billing information")
+    public void enter_billing_information() {
+        pageFactory.getBill().BillMethod();
+
+    }
+
+    @Then("Back to home page")
+    public void back_to_home_page() {
+    pageFactory.getBackh().BackMethod();
+    }
 }
